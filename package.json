@@ -70,7 +70,7 @@
     "util": "0.10.3",
     "webpack": "1.15.0",
     "webpack-dev-server": "1.16.3",
-    "fatina": "0.2.1"
+    "fatina": "0.2.2"
   },
   "nyc": {
     "include": [
