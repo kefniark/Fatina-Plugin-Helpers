@@ -1,0 +1,83 @@
+{
+  "name": "fatina-plugin-helpers",
+  "description": "Fatina plugin for 2d library like Pixi.js, Phaser, ...",
+  "version": "0.0.1",
+  "homepage": "https://github.com/kefniark/Fatina-Plugin-Helpers",
+  "main": "build/fatina-plugin-helpers.js",
+  "types": "build/fatina-plugin-helpers.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kefniark/Fatina.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kefniark/Fatina/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "tween",
+    "tweener",
+    "tweening",
+    "easing",
+    "animation",
+    "sequence",
+    "typescript",
+    "game",
+    "pixi",
+    "phaser"
+  ],
+  "author": {
+    "name": "Kevin destrem",
+    "email": "kef1@free.fr"
+  },
+  "dependencies": {
+  },
+  "scripts": {
+    "all": "npm run deps && npm run build && npm run dev",
+    "deps": "npm install .",
+    "build": "tsc && rimraf build && webpack && rimraf lib && rimraf build/lib",
+    "dev": "webpack-dev-server",
+    "clean": "run-s clean:build clean:modules clean:coverage",
+    "clean:build": "shx rm -rf build lib",
+    "clean:modules": "rimraf \"./node_modules\"",
+    "clean:docs": "rimraf \"./docs\"",
+    "clean:coverage": "rimraf \"./coverage\"",
+    "test": "run-s test:**",
+    "test:lint": "tslint --type-check --project tsconfig.json './src/**/*.ts' 'tests/**/*.ts'",
+    "test:unittest": "ts-node node_modules/tape/bin/tape ./tests/**/*.ts | tspec",
+    "docs": "npm run typedoc -- --options typedoc.json ./src/",
+    "typedoc": "typedoc",
+    "coverage": "nyc --all --reporter=html --reporter=text npm run test:unittest",
+    "coveralls": "nyc --all --reporter=text-lcov npm run test:unittest | coveralls"
+  },
+  "devDependencies": {
+    "@types/node": "7.0.18",
+    "@types/tape": "^4.2.29",
+    "coveralls": "2.13.1",
+    "dts-bundle": "0.7.2",
+    "npm-run-all": "4.0.2",
+    "nyc": "10.3.2",
+    "optimize-js-plugin": "0.0.4",
+    "raw-loader": "0.5.1",
+    "rimraf": "2.6.1",
+    "shx": "0.2.2",
+    "tap-spec": "4.1.1",
+    "tape": "^4.6.3",
+    "ts-loader": "^2.0.3",
+    "ts-node": "^3.0.2",
+    "tslint": "^5.0.0",
+    "typedoc": "^0.7.0",
+    "typescript": "^2.2.2",
+    "util": "0.10.3",
+    "webpack": "1.15.0",
+    "webpack-dev-server": "1.16.3",
+    "fatina": "0.2.1"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  }
+}
