@@ -372,6 +372,30 @@ test('Test Tint Color Relative', function (t: any) {
 	t.end();
 });
 
+test('Test Tint Format', function (t: any) {
+	let obj = GetPixiObject();
+
+	obj.ColorRGBToRel('0x002200', 5);
+	Fatina.Update(5);
+	t.notEqual(0, obj.tint);
+
+	obj.ColorRGBToRel('0xFF002200', 5);
+	Fatina.Update(5);
+	t.notEqual(0, obj.tint);
+
+	obj.ColorRGBToRel('002200', 5);
+	Fatina.Update(5);
+	t.notEqual(0, obj.tint);
+
+	obj.tint = NaN;
+
+	obj.ColorRGBToRel('#0022FF', 5);
+	Fatina.Update(5);
+	t.notEqual(0, obj.tint);
+
+	t.end();
+});
+
 test('Test Tint PunchColor', function (t: any) {
 	let obj = GetPixiObject();
 
