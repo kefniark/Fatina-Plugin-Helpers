@@ -16,6 +16,7 @@ test('Test Init', function (t: any) {
 	t.equal('function', typeof fatina.plugin.AddHelpers, 'Check the fatina helper was added');
 	t.throws(() => plugin.Init(fatina), 'Check the plugin cant be init twice');
 
+	Fatina.plugin.AddHelpers({});
 	t.end();
 });
 
