@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (obj.hue) {
 	            AddHueHelpers(this.fatina, obj);
 	        }
-	        else if (obj.tint) {
+	        else if (obj.tint || obj.tint === 0) {
 	            AddTintHelpers(this.fatina, obj);
 	        }
 	    };
@@ -296,7 +296,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    obj.PunchColor = function (r, g, b, duration, iteration, autoStart) {
 	        duration = duration || 60;
 	        iteration = iteration || 5;
-	        var tint = hexToRGB(this.tint);
+	        var tint = hexToRGB(this.tint.toString('16'));
 	        var sequence = fatina.Sequence();
 	        for (var i = 0; i < iteration; i++) {
 	            var coef = (i % 2 === 0) ? 1 : -1;

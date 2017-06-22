@@ -60,7 +60,7 @@ class FatinaPluginHelpers implements IPlugin {
 		// Add Helpers related to hue
 		if (obj.hue) {
 			AddHueHelpers(this.fatina, obj);
-		} else if (obj.tint) {
+		} else if (obj.tint || obj.tint === 0) {
 			AddTintHelpers(this.fatina, obj);
 		}
 	}
@@ -358,7 +358,7 @@ function AddTintHelpers(fatina: any, obj: any) {
 	obj.PunchColor = function (r: number, g: number, b: number, duration?: number, iteration?: number, autoStart?: boolean) {
 		duration = duration || 60;
 		iteration = iteration || 5;
-		let tint = hexToRGB(this.tint);
+		let tint = hexToRGB(this.tint.toString('16'));
 
 		let sequence = fatina.Sequence();
 		for (let i = 0; i < iteration; i ++) {

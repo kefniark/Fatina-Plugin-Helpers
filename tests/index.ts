@@ -450,7 +450,7 @@ function GetPixiObject() {
 		scale: {x: 1, y: 1 },
 		rotation: 0,
 		alpha: 1,
-		tint: '#000000'
+		tint: 0
 	};
 
 	// Add plugin helpers to the object

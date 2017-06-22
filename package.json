@@ -1,7 +1,7 @@
 {
   "name": "fatina-plugin-helpers",
   "description": "Fatina plugin for 2d library like Pixi.js, Phaser, ...",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/kefniark/Fatina-Plugin-Helpers",
   "main": "build/fatina-plugin-helpers.js",
   "types": "build/fatina-plugin-helpers.d.ts",
