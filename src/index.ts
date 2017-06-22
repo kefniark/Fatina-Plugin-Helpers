@@ -18,7 +18,7 @@ export function Get(): IPlugin {
  * @implements {IPlugin}
  */
 class FatinaPluginHelpers implements IPlugin {
-	public readonly name: string = 'fatina-plugin-helpers';
+	public readonly name = 'fatina-plugin-helpers';
 	private fatina: any;
 	private init = false;
 

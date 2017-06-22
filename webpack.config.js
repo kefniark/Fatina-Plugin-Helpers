@@ -15,7 +15,7 @@ DtsBundlePlugin.prototype.apply = function (compiler) {
 			baseDir: "lib",
 			main: "./lib/src/index.d.ts",
 			out: "../build/fatina-plugin-helpers.d.ts",
-			exclude: function(file, external) {
+			exclude: (file, external) => {
 				return file.indexOf("tests") !== -1;
 			},
 			removeSource: true,
