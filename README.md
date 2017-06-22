@@ -15,8 +15,9 @@ Small & Light tweening library for **Games** / **Web**
 [![License](https://img.shields.io/npm/l/fatina-plugin-helpers.svg)](https://npmjs.org/package/fatina-plugin-helpers)
 
 ## Description
-This repository is just a helper to have a better integration of Fatina in javascript games library (pixi, phaser, ...)
-**This plugin requires Fatina**
+This plugin is just a set of helpers to provide a better integration of Fatina with javascript games library (pixi, phaser, ...)
+
+**This plugin requires Fatina** : [Here](https://github.com/kefniark/Fatina)
 
 ## Getting Started
 
@@ -55,6 +56,8 @@ Fatina.plugin.AddHelpers(myObject);
 Here are the helpers automatically added:
 
 ### Position
+Following methods use `.position.x` and `.position.y`
+
 * myObject.**MoveTo(x, y, duration)** : Move to an absolute position
 * myObject.**MoveXTo(x, duration)**
 * myObject.**MoveYTo(y, duration)**
@@ -65,6 +68,8 @@ Here are the helpers automatically added:
 * myObject.**Shake(x, y, duration, iteration)** : Shake around the current position
 
 ### Rotation
+Following methods use `.rotation`
+
 * myObject.**RotateTo(angle, duration)** : Rotate to a specific angle in radiant (to PI/2)
 * myObject.**RotateToRel(angle, duration)** : Rotate by a relative radiant angle (+PI/2)
 * myObject.**RotateDegTo(angle, duration)** : Rotate to a specific angle in degrees (to 90°)
@@ -72,9 +77,13 @@ Here are the helpers automatically added:
 * myObject.**PunchRotate(angle, duration, iteration)**
 
 ### Alpha
+Following method use `.alpha`
+
 * myObject.**FadeTo(alpha, duration)** : Alpha is a float between 0 and 1 (1: fadeIn, 0: fadeOut)
 
 ### Scale
+Following methods use `.scale.x` and `.scale.y`
+
 * myObject.**ScaleTo(x, y, duration)** : Scale to a specified value
 * myObject.**ScaleXTo(x, duration)**
 * myObject.**ScaleYTo(y, duration)**
@@ -84,6 +93,8 @@ Here are the helpers automatically added:
 * myObject.**PunchScale(x, y, duration, iteration)**
 
 ### Color / Tint
+Following methods use `.tint` or `.hue` (the color API are slightly different between libs)
+
 * myObject.**ColorTo(r, g, b, duration)** : R,G,B are float between 0-1
 * myObject.**ColorToRel(r, g, b, duration)**
 * myObject.**ColorRGBTo(hex, duration)** : hex is a string representation '#FFFFFF'
