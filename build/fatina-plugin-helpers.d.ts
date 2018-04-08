@@ -4,8 +4,14 @@
 
 import { IPlugin } from 'fatina';
 
-export function Get(): IPlugin;
+/**
+  * To get an instance of this plugin
+  *
+  * @export
+  * @returns
+  */
+export function get(): IPlugin;
 export interface IPluginAnimator {
-    AddHelpers(obj: any): void;
+    addHelpers(obj: any): void;
 }
 
