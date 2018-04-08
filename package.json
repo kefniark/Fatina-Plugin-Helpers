@@ -29,8 +29,7 @@
     "name": "Kevin destrem",
     "email": "kef1@free.fr"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "scripts": {
     "all": "npm run deps && npm run build && npm run dev",
     "deps": "npm install .",
@@ -43,32 +42,35 @@
     "clean:coverage": "rimraf \"./coverage\"",
     "test": "run-s test:**",
     "test:lint": "tslint --type-check --project tsconfig.json './src/**/*.ts' 'tests/**/*.ts'",
+    "test:depencencies": "npm-check --production || echo \"Run 'npm run update' to interactively update dependencies for this project\"",
     "test:unittest": "ts-node node_modules/tape/bin/tape ./tests/**/*.ts | tspec",
     "docs": "typedoc --out ./docs ./src/",
     "coverage": "nyc --all --reporter=html --reporter=text npm run test:unittest",
-    "coveralls": "nyc --all --reporter=text-lcov npm run test:unittest | coveralls"
+    "coveralls": "nyc --all --reporter=text-lcov npm run test:unittest | coveralls",
+    "update": "npm-check --update"
   },
   "devDependencies": {
-    "@types/node": "8.0.6",
-    "@types/tape": "^4.2.29",
-    "coveralls": "2.13.1",
+    "@types/node": "^9.6.2",
+    "@types/tape": "^4.2.32",
+    "coveralls": "^3.0.0",
     "dts-bundle": "0.7.3",
-    "npm-run-all": "4.0.2",
-    "nyc": "11.0.3",
+    "fatina": "^1.0.0",
+    "npm-check": "^5.6.0",
+    "npm-run-all": "^4.1.2",
+    "nyc": "^11.6.0",
     "optimize-js-plugin": "0.0.4",
     "raw-loader": "0.5.1",
-    "rimraf": "2.6.1",
+    "rimraf": "^2.6.2",
     "shx": "0.2.2",
     "tap-spec": "4.1.1",
-    "tape": "^4.6.3",
-    "ts-loader": "2.2.1",
-    "ts-node": "3.1.0",
-    "tslint": "5.4.3",
-    "typedoc": "0.7.1",
-    "typescript": "2.4.1",
-    "webpack": "3.0.0",
-    "webpack-dev-server": "2.5.0",
-    "fatina": "0.3.1"
+    "tape": "^4.9.0",
+    "ts-loader": "^4.2.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "typedoc": "^0.11.1",
+    "typescript": "^2.8.1",
+    "webpack": "^4.5.0",
+    "webpack-dev-server": "^3.1.2"
   },
   "nyc": {
     "include": [
