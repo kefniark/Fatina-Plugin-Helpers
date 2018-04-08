@@ -42,14 +42,14 @@ import * as FatinaHelpers from 'fatina-plugin-helpers';
 
 and initialize (add this plugin to **Fatina**)
 ```ts
-Fatina.Init();
-Fatina.LoadPlugin(FatinaHelpers.Get());
+Fatina.init();
+Fatina.loadPlugin(FatinaHelpers.get());
 ```
 
 ### Usage
 You can now populate any kind of object with the following method (container, sprites, camera, ...)
 ```ts
-Fatina.plugin.AddHelpers(myObject);
+Fatina.plugin.addHelpers(myObject);
 ```
 
 ## Methods
@@ -58,45 +58,45 @@ Here are the helpers automatically added:
 ### Position
 Following methods use `.position.x` and `.position.y`
 
-* myObject.**MoveTo(x, y, duration)** : Move to an absolute position
-* myObject.**MoveXTo(x, duration)**
-* myObject.**MoveYTo(y, duration)**
-* myObject.**MoveToRel(x, y, duration)** : Move to a relative position
-* myObject.**MoveXToRel(x, duration)**
-* myObject.**MoveYToRel(y, duration)**
-* myObject.**PunchPosition(x, y, duration, iteration)** : Oscillate around the current position
-* myObject.**Shake(x, y, duration, iteration)** : Shake around the current position
+* myObject.**moveTo(x, y, duration)** : Move to an absolute position
+* myObject.**moveXTo(x, duration)**
+* myObject.**moveYTo(y, duration)**
+* myObject.**moveToRel(x, y, duration)** : Move to a relative position
+* myObject.**moveXToRel(x, duration)**
+* myObject.**moveYToRel(y, duration)**
+* myObject.**punchPosition(x, y, duration, iteration)** : Oscillate around the current position
+* myObject.**shake(x, y, duration, iteration)** : Shake around the current position
 
 ### Rotation
 Following methods use `.rotation`
 
-* myObject.**RotateTo(angle, duration)** : Rotate to a specific angle in radiant (to PI/2)
-* myObject.**RotateToRel(angle, duration)** : Rotate by a relative radiant angle (+PI/2)
-* myObject.**RotateDegTo(angle, duration)** : Rotate to a specific angle in degrees (to 90°)
-* myObject.**RotateDegToRel(angle, duration)** : Rotate to a specific angle in degrees (+90°)
-* myObject.**PunchRotate(angle, duration, iteration)**
+* myObject.**rotateTo(angle, duration)** : Rotate to a specific angle in radiant (to PI/2)
+* myObject.**rotateToRel(angle, duration)** : Rotate by a relative radiant angle (+PI/2)
+* myObject.**rotateDegTo(angle, duration)** : Rotate to a specific angle in degrees (to 90°)
+* myObject.**rotateDegToRel(angle, duration)** : Rotate to a specific angle in degrees (+90°)
+* myObject.**punchRotate(angle, duration, iteration)**
 
 ### Alpha
 Following method use `.alpha`
 
-* myObject.**FadeTo(alpha, duration)** : Alpha is a float between 0 and 1 (1: fadeIn, 0: fadeOut)
+* myObject.**fadeTo(alpha, duration)** : Alpha is a float between 0 and 1 (1: fadeIn, 0: fadeOut)
 
 ### Scale
 Following methods use `.scale.x` and `.scale.y`
 
-* myObject.**ScaleTo(x, y, duration)** : Scale to a specified value
-* myObject.**ScaleXTo(x, duration)**
-* myObject.**ScaleYTo(y, duration)**
-* myObject.**ScaleToRel(x, y, duration)**
-* myObject.**ScaleXToRel(x, duration)**
-* myObject.**ScaleYToRel(y, duration)**
-* myObject.**PunchScale(x, y, duration, iteration)**
+* myObject.**scaleTo(x, y, duration)** : Scale to a specified value
+* myObject.**scaleXTo(x, duration)**
+* myObject.**scaleYTo(y, duration)**
+* myObject.**scaleToRel(x, y, duration)**
+* myObject.**scaleXToRel(x, duration)**
+* myObject.**scaleYToRel(y, duration)**
+* myObject.**punchScale(x, y, duration, iteration)**
 
 ### Color / Tint
 Following methods use `.tint` or `.hue` (the color API are slightly different between libs)
 
-* myObject.**ColorTo(r, g, b, duration)** : R,G,B are float between 0-1
-* myObject.**ColorToRel(r, g, b, duration)**
-* myObject.**ColorRGBTo(hex, duration)** : hex is a string representation '#FFFFFF'
-* myObject.**ColorRGBToRel(hex, duration)**
-* myObject.**PunchColor(r, g, b, duration, iteration)**
+* myObject.**colorTo(r, g, b, duration)** : R,G,B are float between 0-1
+* myObject.**colorToRel(r, g, b, duration)**
+* myObject.**colorRGBTo(hex, duration)** : hex is a string representation '#FFFFFF'
+* myObject.**colorRGBToRel(hex, duration)**
+* myObject.**punchColor(r, g, b, duration, iteration)**
