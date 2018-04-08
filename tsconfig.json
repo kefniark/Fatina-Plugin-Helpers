@@ -1,32 +1,33 @@
 {
 	"compilerOptions": {
+		// build
+		"typeRoots": ["node_modules/@types"],
+		"lib": ["es2015", "dom"],
+		"target": "es6",
 		"outDir": "./lib",
-		"typeRoots": [
-			"node_modules/@types"
-		],
-		"types": [
-			"node"
-		],
-		"lib": [
-			"es2015", "dom"
-		],
+		"types": ["node"],
 		"module": "commonjs",
-		"target": "es5",
-		"noImplicitAny": true,
+
+		// build settings
+		"sourceMap": true,
+		"pretty": true,
+		"declaration": true,
+		"preserveConstEnums": true,
+
+		// strict
+		"strict": true,
+		"alwaysStrict": true,
+		"strictPropertyInitialization": false,
 		"noEmit": false,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"allowSyntheticDefaultImports": true,
 		"importHelpers": false,
 		"noEmitHelpers": false,
 		"noEmitOnError": true,
-		"removeComments": true,
-		"preserveConstEnums": true,
-		"noUnusedLocals": false,
 		"strictNullChecks": true,
-		"sourceMap": true,
-		"pretty": true,
-		"declaration": true
+		"noUnusedLocals": true,
+		"noImplicitAny": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true
 	},
 	"include": [
 		"src/**/*",
